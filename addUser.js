@@ -12,13 +12,14 @@ function writeUserData(userId, firstName, lastName) {
     .catch((error) => {
         alert('❌ خطأ: ' + error.message);
         console.error(error);
-    })
+    });
 }
 
+// تأكد أن ID الفورم في HTML هو "userForm"
 document.getElementById('userForm').addEventListener('submit', (event) => {
     event.preventDefault();
     const firstName = document.getElementById('fname').value;
     const lastName = document.getElementById('lname').value;
-    const userId = Date.now().toString(); // ✅ تم التعديل
+    const userId = Date.now().toString();
     writeUserData(userId, firstName, lastName);
 });
